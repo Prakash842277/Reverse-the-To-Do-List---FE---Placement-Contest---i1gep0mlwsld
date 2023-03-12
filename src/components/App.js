@@ -4,15 +4,16 @@ import '../styles/App.css';
 function ToDo() {
   return (<tr>
     <td>
-      <p>id</p>
+      <p>{todoId}</p>
     </td>
     <td>
-      <input />
+      <input placeholder="Enter text here" />
     </td>
     <td>
-      <p>createdAt</p>
+      <p>{createdAt}</p>
     </td>
-  </tr>)
+  </tr>
+);
 }
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
     createdAt: '18:00',
   }
   ]);
-const reverseOrder=() => {
+const reverseOrder = () => {
   setTodos([...todos].reverse());
 };
 
@@ -34,7 +35,7 @@ const reverseOrder=() => {
       <table>
         <tbody>
     {todos.map((todo) => (
-      <ToDo key= {todo.id} todoid = {todo.id} createAt = {todo.createdAt} />
+      <ToDo key = {todo.id} todoId = {todo.id} createdAt = {todo.createdAt} />
       ))}
         </tbody>
       </table>
